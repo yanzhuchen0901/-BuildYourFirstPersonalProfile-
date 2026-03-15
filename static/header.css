@@ -1,0 +1,71 @@
+/* Header styles split out from styles.css */
+
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(90deg, #bd6c1a, #f49612);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s;
+    z-index: 1000;
+}
+
+#header>div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 1100px;
+    justify-content: space-between;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background 0.15s, transform 0.12s;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+
+/* 移动端适配 */
+
+@media (max-width: 768px) {
+    #header {
+        height: auto;
+        padding: 12px 0;
+    }
+    #header>div {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 0 12px;
+    }
+    #header>div>div:first-child {
+        width: 100%;
+        font-size: 16px;
+    }
+    #header>div>div:nth-child(2) {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    .nav-btn {
+        padding: 6px 10px;
+        font-size: 13px;
+        flex: 1;
+        min-width: 80px;
+        text-align: center;
+    }
+}
